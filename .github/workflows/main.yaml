@@ -15,13 +15,21 @@ jobs:
         with:
           token: ${{ secrets.COMMIT_TOKEN }}
 
-      - name: Make changes
+
+      - name: Read file content
         run: |
-          echo "Updated content" > file.txt # Replace with your file path
-          git config --global user.email "vishal.kumar@cloudactivelabs.com"
-          git config --global user.name "vishalkumar-activelabs"
-          # git pull origin main
-          git add .
-          git commit -m "Update app.js"
-          git status
-          git push
+            file_content=$(cat file.txt) # Replace with your file path
+            echo "Content of the file:"
+            echo "$file_content"
+
+
+    #   - name: Make changes
+    #     run: |
+    #       echo "Updated content" > file.txt # Replace with your file path
+    #       git config --global user.email "vishal.kumar@cloudactivelabs.com"
+    #       git config --global user.name "vishalkumar-activelabs"
+    #       # git pull origin main
+    #       git add .
+    #       git commit -m "Update app.js"
+    #       git status
+    #       git push
