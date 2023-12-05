@@ -22,4 +22,4 @@ jobs:
           git add .
           git commit -m "Update app.js"
           git status
-          git push --set-upstream origin main-$GITHUB_SHA
+          git push origin main
