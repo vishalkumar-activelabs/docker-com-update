@@ -18,10 +18,10 @@ jobs:
 
       - name: Read file content
         run: |
-            file_content=$(cat project1/package.json) # Replace with your file path
-            echo "Content of the file:"
-            echo "$file_content"
-            echo "PROJECT_1=$file_content" >> $GITHUB_ENV
+          file_content=$(cat project1/package.json) # Replace with your file path
+          echo "Content of the file:"
+          echo "$file_content"
+          echo "PROJECT_1=$file_content" >> $GITHUB_ENV
 
 
       - name: Set variable
@@ -31,9 +31,9 @@ jobs:
         run: |
           echo $MY_VARIABLE
 
-      - name: Use variable of project1
+      - name: Display environment variable value
         run: |
-          echo $PROJECT_1
+          echo "PROJECT_1 value is ${{ env.PROJECT_1 }}"
 
     #   - name: Make changes
     #     run: |
