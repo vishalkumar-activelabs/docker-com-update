@@ -18,7 +18,7 @@ jobs:
 
       - name: Read file content
         run: |
-            file_content=$(cat file.txt) # Replace with your file path
+            file_content=$(cat package.json) # Replace with your file path
             echo "Content of the file:"
             echo "$file_content"
 
