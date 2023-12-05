@@ -21,12 +21,19 @@ jobs:
             file_content=$(cat project1/package.json) # Replace with your file path
             echo "Content of the file:"
             echo "$file_content"
+            echo "PROJECT_1=$file_content" >> $GITHUB_ENV
+
 
       - name: Set variable
         run: echo "MY_VARIABLE=Hello World" >> $GITHUB_ENV
         
       - name: Use variable
-        run: echo $MY_VARIABLE
+        run: |
+          echo $MY_VARIABLE
+
+      - name: Use variable of project1
+        run: |
+          echo $PROJECT_1
 
     #   - name: Make changes
     #     run: |
