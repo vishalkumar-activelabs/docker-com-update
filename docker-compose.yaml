@@ -1,0 +1,27 @@
+name: Create Pull Request
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.COMMIT_TOKEN }}
+
+      - name: Make changes
+        run: |
+          echo "Updated content" > file.txt # Replace with your file path
+          git config --global user.email "vishal.kumar@cloudactivelabs.com"
+          git config --global user.name "vishalkumar-activelabs"
+          # git pull origin main
+          git add .
+          git commit -m "Update app.js"
+          git status
+          git push --set-upstream origin main-$GITHUB_SHA
