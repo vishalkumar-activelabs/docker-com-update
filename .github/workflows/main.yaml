@@ -22,6 +22,11 @@ jobs:
             echo "Content of the file:"
             echo "$file_content"
 
+      - name: Set variable
+        run: echo "MY_VARIABLE=Hello World" >> $GITHUB_ENV
+        
+      - name: Use variable
+        run: echo $MY_VARIABLE
 
     #   - name: Make changes
     #     run: |
